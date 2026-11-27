@@ -1,0 +1,5 @@
+Job Application Tracking System/venv/
+Job Application Tracking System/**/__pycache__/
+Job Application Tracking System/*.sqlite3
+*.pyc
+.env

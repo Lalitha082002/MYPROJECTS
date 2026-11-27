@@ -1,0 +1,41 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upcoming Interviews</title>
+    <link rel="stylesheet" href="{% static 'applications/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming Interviews</h1>
+
+        {% if interviews %}
+            <table border="1" cellpadding="10" cellspacing="0">
+                <tr>
+                    <th>Company</th>
+                    <th>Job Role</th>
+                    <th>Interview Date</th>
+                    <th>Location</th>
+                </tr>
+
+                {% for interview in interviews %}
+                <tr>
+                    <td>{{ interview.company_name }}</td>
+                    <td>{{ interview.job_role }}</td>
+                    <td>{{ interview.interview_date }}</td>
+                    <td>{{ interview.location }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No upcoming interviews found.</p>
+        {% endif %}
+
+        <br>
+        <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+        <br><br>
+        <a href="{% url 'home' %}">Back to Home</a>
+    </div>
+</body>
+</html>

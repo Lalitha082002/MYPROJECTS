@@ -1,0 +1,246 @@
+
+/* =================================
+   1. GENERAL PAGE DESIGN
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2,
+        #a18cd1
+    );
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+/* =================================
+   2. MAIN CONTAINER
+================================= */
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(30, 20, 70, 0.18);
+}
+
+
+/* =================================
+   3. HEADINGS
+================================= */
+
+h1 {
+    color: #443477;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+h2 {
+    color: #5141a5;
+    margin-bottom: 18px;
+}
+
+h3 {
+    color: #7655b5;
+    margin-bottom: 15px;
+}
+
+
+/* =================================
+   4. PARAGRAPHS
+================================= */
+
+p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   5. LINKS
+================================= */
+
+a {
+    display: inline-block;
+    color: #6852bd;
+    text-decoration: none;
+    margin: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #39277f;
+    text-decoration: underline;
+}
+
+
+/* =================================
+   6. BUTTONS
+================================= */
+
+button {
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(
+        135deg,
+        #5141a5,
+        #5c318c
+    );
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   7. FORM FIELDS
+================================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: 1px solid #d6d0eb;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: #faf9ff;
+    color: #333;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #7655b5;
+    box-shadow: 0 0 6px rgba(118, 85, 181, 0.25);
+}
+
+
+/* =================================
+   8. TABLE DESIGN
+================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+td {
+    padding: 13px;
+    border-bottom: 1px solid #eee9f7;
+    text-align: center;
+    color: #444;
+}
+
+tr:hover {
+    background-color: #f3f0ff;
+}
+
+
+/* =================================
+   9. HORIZONTAL LINE
+================================= */
+
+hr {
+    border: none;
+    border-top: 1px solid #e5def4;
+    margin: 22px 0;
+}
+
+
+/* =================================
+   10. LABELS
+================================= */
+
+label {
+    color: #5141a5;
+    font-weight: bold;
+}
+
+
+/* =================================
+   11. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 94%;
+        padding: 18px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 96%;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}

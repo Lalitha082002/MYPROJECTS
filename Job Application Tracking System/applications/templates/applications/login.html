@@ -1,0 +1,31 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Job Tracker</title>
+    <link rel="stylesheet" href="{% static 'applications/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Login to Your Account</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p>Don't have an account?
+            <a href="{% url 'register' %}">Register here</a>
+        </p>
+
+    </div>
+
+</body>
+</html>

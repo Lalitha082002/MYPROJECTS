@@ -1,0 +1,102 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Job Applications</title>
+    <link rel="stylesheet" href="{% static 'applications/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>My Job Applications</h1>
+
+        
+        <br><br>
+
+        <form method="GET">
+            <input type="text" name="search" placeholder="Search by company or job role..." value="{{ search_query }}">
+            <select name="status">
+
+                <option value="">All Status</option>
+
+                <option value="Applied"
+                    {% if selected_status == "Applied" %}selected{% endif %}>
+                    Applied
+                </option>
+
+                <option value="Interview"
+                    {% if selected_status == "Interview" %}selected{% endif %}>
+                    Interview
+                </option>
+
+                <option value="Selected"
+                    {% if selected_status == "Selected" %}selected{% endif %}>
+                    Selected
+                </option>
+
+                <option value="Rejected"
+                    {% if selected_status == "Rejected" %}selected{% endif %}>
+                    Rejected
+                </option>
+
+            </select>
+            <button type="submit">Search</button>
+        </form>
+
+<br>
+
+        <a href="{% url 'add_application' %}">Add New Application</a>
+
+        <br><br>
+
+        {% if applications %}
+
+            <table border="1" cellpadding="10" cellspacing="0">
+
+                <tr>
+                    <th>Company</th>
+                    <th>Job Role</th>
+                    <th>Location</th>
+                    <th>Job Type</th>
+                    <th>Salary</th>
+                    <th>Application Date</th>
+                    <th>Status</th>
+                </tr>
+
+                {% for application in applications %}
+
+                <tr>
+                    <td>{{ application.company_name }}</td>
+                    <td>{{ application.job_role }}</td>
+                    <td>{{ application.location }}</td>
+                    <td>{{ application.job_type }}</td>
+                    <td>{{ application.salary }}</td>
+                    <td>{{ application.application_date }}</td>
+                    <td>{{ application.status }}</td>
+                    <td><a href="{% url 'edit_application' application.id %}">Edit</a>
+
+                    <td><a href="{% url 'delete_application' application.id %}">Delete</a></td>   
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </table>
+
+        {% else %}
+
+            <p>You haven't added any job applications yet.</p>
+
+        {% endif %}
+
+        <br>
+
+        <a href="{% url 'home' %}">Back to Home</a>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Job Tracker</title>
+    <link rel="stylesheet" href="{% static 'applications/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Create Your Account</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p>Already have an account? <a href="#">Login here</a></p>
+
+    </div>
+
+</body>
+</html>
